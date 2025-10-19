@@ -1,94 +1,163 @@
-# 10x Astro Starter
+# AI Flashcard Learning Platform
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+A web-based educational tool that leverages AI to streamline the creation and study of flashcards, designed to help high school students prepare for tests efficiently using proven spaced repetition methodology.
+
+## Table of Contents
+
+- [Project Description](#project-description)
+- [Tech Stack](#tech-stack)
+- [Getting Started Locally](#getting-started-locally)
+- [Available Scripts](#available-scripts)
+- [Project Scope](#project-scope)
+- [Project Status](#project-status)
+- [License](#license)
+
+## Project Description
+
+The AI Flashcard Learning Platform is designed to solve the problem of time-consuming manual flashcard creation that discourages students from using effective study methods like spaced repetition. 
+
+### Key Features
+
+- **AI-Powered Flashcard Generation**: Generate high-quality flashcards from user-provided text (150-15,000 characters)
+- **Google Authentication**: Secure sign-in using Google OAuth
+- **Deck Management**: Create and organize flashcards into named decks
+- **Flashcard Review System**: Review, edit, accept, or reject AI-generated cards before adding them to your deck
+- **Manual Card Creation**: Create flashcards manually when needed
+- **Spaced Repetition Study Sessions**: Study using the proven Leitner system for optimal learning
+- **Progress Tracking**: View performance summaries after study sessions
+
+### Target Users
+
+Primarily high school students (ages 13+) seeking an efficient way to prepare for tests by combining AI-assisted content generation with spaced repetition methodology.
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+### Frontend
+- **Astro 5** - Fast, efficient website framework with minimal JavaScript
+- **React 19** - Interactive components where needed
+- **TypeScript 5** - Static typing and enhanced IDE support
+- **Tailwind CSS 4** - Utility-first CSS framework for styling
+- **Shadcn/ui** - Accessible React component library for UI elements
 
-## Prerequisites
+### Backend
+- **Supabase** - Comprehensive backend-as-a-service solution
+  - PostgreSQL database
+  - Built-in user authentication
+  - SDK for seamless integration
+  - Open source with self-hosting options
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+### AI Integration
+- **Openrouter.ai** - AI service providing access to multiple models
+  - Support for OpenAI, Anthropic, Google, and other providers
+  - Financial limits and cost optimization
+  - High efficiency and flexibility
 
-## Getting Started
+### CI/CD and Hosting
+- **GitHub Actions** - Automated CI/CD pipelines
+- **DigitalOcean** - Application hosting via Docker containers
 
-1. Clone the repository:
+## Getting Started Locally
 
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
+### Prerequisites
 
-2. Install dependencies:
+- Node.js version 22.14.0 (specified in `.nvmrc`)
+- npm or yarn package manager
+- Git
 
-```bash
-npm install
-```
+### Installation
 
-3. Run the development server:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd flashcards
+   ```
 
-```bash
-npm run dev
-```
+2. **Install Node.js version**
+   ```bash
+   # If using nvm
+   nvm use
+   # Or install Node.js 22.14.0 manually
+   ```
 
-4. Build for production:
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run build
-```
+4. **Set up environment variables**
+   ```bash
+   # Copy environment template (create if needed)
+   cp .env.example .env.local
+   # Configure your Supabase and Openrouter.ai credentials
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:4321` (default Astro port).
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start the development server |
+| `npm run build` | Build the application for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro` | Run Astro CLI commands |
+| `npm run lint` | Run ESLint to check for code issues |
+| `npm run lint:fix` | Run ESLint and automatically fix issues |
+| `npm run format` | Format code using Prettier |
 
-## Project Structure
+## Project Scope
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+### Included Features (MVP)
 
-## AI Development Support
+- **Authentication**: Google Sign-In integration
+- **Deck Management**: Create and view named flashcard decks
+- **AI Generation**: Generate flashcards from text input with monthly limits per user
+- **Card Review**: Edit, accept, or reject AI-generated cards before saving
+- **Manual Creation**: Create flashcards manually with question/answer format
+- **Study Sessions**: Spaced repetition using the Leitner system
+- **Progress Tracking**: Session summaries showing performance metrics
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+### Current Limitations
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
+The following features are **not included** in the MVP scope:
 
-### Cursor IDE
+- Custom repetition algorithms (Leitner system only)
+- File imports (text input only)
+- Deck sharing between users
+- Native mobile applications (web-responsive only)
+- Administrative UI panel
+- Sub-decks, deck renaming, or deck deletion
+- Bulk "Accept All" / "Reject All" actions for generated cards
 
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
+### Success Metrics
 
-### GitHub Copilot
+- **AI Flashcard Acceptance Rate**: Target 75% (accepted cards / total generated cards)
+- **AI Usage Rate**: Target 75% (AI-generated cards / total created cards)
 
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
+## Project Status
 
-### Windsurf
+🚧 **Development Phase** - MVP (Minimum Viable Product)
 
-The `.windsurfrules` file contains AI configuration for Windsurf.
+This project is currently in active development, focusing on core functionality for the MVP release. The platform is designed to validate the AI-assisted flashcard generation concept and spaced repetition learning methodology.
 
-## Contributing
+### Development Priorities
 
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
+1. Core AI flashcard generation functionality
+2. User authentication and deck management
+3. Spaced repetition study system implementation
+4. Performance optimization and user experience refinements
 
 ## License
 
-MIT
+License information not specified. Please contact the project maintainers for licensing details.
+
+---
+
+**Contributing**: This project follows clean code practices with ESLint and Prettier configuration. Please run `npm run lint:fix` and `npm run format` before submitting contributions.
+
+**Support**: For questions or issues, please refer to the project documentation or create an issue in the repository.
