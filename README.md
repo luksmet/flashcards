@@ -1,6 +1,6 @@
 # AI Flashcard Learning Platform
 
-A web-based educational tool that leverages AI to streamline the creation and study of flashcards, designed to help high school students prepare for tests efficiently using proven spaced repetition methodology.
+A web-based educational tool that leverages AI to streamline the creation and study of flashcards, designed to help high school students prepare for tests using proven spaced repetition methodology.
 
 ## Table of Contents
 
